@@ -1,0 +1,126 @@
+<mxfile host="65bd71144e">
+    <diagram id="RockVSMinePipeline" name="Rock vs Mine ML Pipeline">
+        <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+
+                <!-- Title -->
+                <mxCell id="title" value="Rock vs Mine Prediction - ML Pipeline" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontFamily=Helvetica;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="20" width="600" height="40" as="geometry"/>
+                </mxCell>
+
+                <!-- Data Ingestion -->
+                <mxCell id="edge1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#2E86AB;" edge="1" parent="1" source="data_source" target="eda">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="data_source" value="&lt;b&gt;Data Ingestion&lt;/b&gt;&lt;br&gt;&lt;br&gt;Sonar Dataset&lt;br&gt;CSV Format&lt;br&gt;208 samples × 61 features" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A8DADC;strokeColor=#1D3557;fontSize=12;fontFamily=Helvetica;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="120" width="160" height="100" as="geometry"/>
+                </mxCell>
+
+                <!-- EDA -->
+                <mxCell id="edge2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#2E86AB;" edge="1" parent="1" source="eda" target="preprocessing">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="eda" value="&lt;b&gt;Exploratory Data&lt;/b&gt;&lt;br&gt;&lt;b&gt;Analysis&lt;/b&gt;&lt;br&gt;&lt;br&gt;• Class Distribution&lt;br&gt;• Correlation Heatmap&lt;br&gt;• Feature Statistics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A8DADC;strokeColor=#1D3557;fontSize=12;fontFamily=Helvetica;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="120" width="160" height="100" as="geometry"/>
+                </mxCell>
+
+                <!-- Preprocessing -->
+                <mxCell id="edge3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#2E86AB;" edge="1" parent="1" source="preprocessing" target="split">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="preprocessing" value="&lt;b&gt;Data Preprocessing&lt;/b&gt;&lt;br&gt;&lt;br&gt;• Feature Separation&lt;br&gt;• Label Encoding&lt;br&gt;• StandardScaler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A8DADC;strokeColor=#1D3557;fontSize=12;fontFamily=Helvetica;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="120" width="160" height="100" as="geometry"/>
+                </mxCell>
+
+                <!-- Train/Test Split -->
+                <mxCell id="edge4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#2E86AB;" edge="1" parent="1" source="split" target="model">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="split" value="&lt;b&gt;Train/Test Split&lt;/b&gt;&lt;br&gt;&lt;br&gt;Test Size: 20%&lt;br&gt;Random State: 42&lt;br&gt;Stratified Split" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A8DADC;strokeColor=#1D3557;fontSize=12;fontFamily=Helvetica;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="120" width="160" height="100" as="geometry"/>
+                </mxCell>
+
+                <!-- Model Training -->
+                <mxCell id="edge5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#2E86AB;" edge="1" parent="1" source="model" target="evaluation">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="model" value="&lt;b&gt;Model Training&lt;/b&gt;&lt;br&gt;&lt;br&gt;Logistic Regression&lt;br&gt;• Fit on Training Data&lt;br&gt;• Learn Parameters" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#457B9D;strokeColor=#1D3557;fontSize=12;fontFamily=Helvetica;fontStyle=1;fillColor=#457B9D;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="300" width="160" height="100" as="geometry"/>
+                </mxCell>
+
+                <!-- Evaluation -->
+                <mxCell id="edge6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#2E86AB;" edge="1" parent="1" source="evaluation" target="prediction">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="evaluation" value="&lt;b&gt;Model Evaluation&lt;/b&gt;&lt;br&gt;&lt;br&gt;• Accuracy Score&lt;br&gt;• Confusion Matrix&lt;br&gt;• Classification Report&lt;br&gt;• Cross-Validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#457B9D;strokeColor=#1D3557;fontSize=12;fontFamily=Helvetica;fontStyle=1;fillColor=#457B9D;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="300" width="160" height="100" as="geometry"/>
+                </mxCell>
+
+                <!-- Prediction -->
+                <mxCell id="edge7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#2E86AB;" edge="1" parent="1" source="prediction" target="output">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="prediction" value="&lt;b&gt;Prediction Pipeline&lt;/b&gt;&lt;br&gt;&lt;br&gt;• Input Preprocessing&lt;br&gt;• Model Inference&lt;br&gt;• Probability Scores" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1D3557;strokeColor=#1D3557;fontSize=12;fontFamily=Helvetica;fontStyle=1;fillColor=#1D3557;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="300" width="160" height="100" as="geometry"/>
+                </mxCell>
+
+                <!-- Output -->
+                <mxCell id="output" value="&lt;b&gt;Output&lt;/b&gt;&lt;br&gt;&lt;br&gt;Rock (R) or Mine (M)&lt;br&gt;With Confidence Score" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E63946;strokeColor=#1D3557;fontSize=12;fontFamily=Helvetica;fontStyle=1;fillColor=#E63946;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="300" width="160" height="100" as="geometry"/>
+                </mxCell>
+
+                <!-- Metrics Section -->
+                <mxCell id="metrics_title" value="&lt;b&gt;Performance Metrics&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontFamily=Helvetica;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="480" width="760" height="30" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="metric1" value="&lt;b&gt;Training Accuracy&lt;/b&gt;&lt;br&gt;~84%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A8DADC;strokeColor=#1D3557;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="530" width="120" height="60" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="metric2" value="&lt;b&gt;Test Accuracy&lt;/b&gt;&lt;br&gt;~79%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A8DADC;strokeColor=#1D3557;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="530" width="120" height="60" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="metric3" value="&lt;b&gt;Dataset Size&lt;/b&gt;&lt;br&gt;208 samples" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A8DADC;strokeColor=#1D3557;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="530" width="120" height="60" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="metric4" value="&lt;b&gt;Features&lt;/b&gt;&lt;br&gt;60 numerical" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A8DADC;strokeColor=#1D3557;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="530" width="120" height="60" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="metric5" value="&lt;b&gt;Classes&lt;/b&gt;&lt;br&gt;Rock (97), Mine (111)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A8DADC;strokeColor=#1D3557;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="1">
+                    <mxGeometry x="600" y="530" width="120" height="60" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="metric6" value="&lt;b&gt;Model&lt;/b&gt;&lt;br&gt;Logistic Regression" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A8DADC;strokeColor=#1D3557;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="1">
+                    <mxGeometry x="740" y="530" width="120" height="60" as="geometry"/>
+                </mxCell>
+
+                <!-- Legend -->
+                <mxCell id="legend_title" value="&lt;b&gt;Pipeline Stages&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontFamily=Helvetica;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="640" width="150" height="25" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="legend1" value="Data Processing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A8DADC;strokeColor=#1D3557;fontSize=10;fontFamily=Helvetica;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="680" width="120" height="30" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="legend2" value="Model Training" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#457B9D;strokeColor=#1D3557;fontSize=10;fontFamily=Helvetica;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="720" width="120" height="30" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="legend3" value="Prediction" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1D3557;strokeColor=#1D3557;fontSize=10;fontFamily=Helvetica;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="760" width="120" height="30" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="legend4" value="Output" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E63946;strokeColor=#1D3557;fontSize=10;fontFamily=Helvetica;fontColor=#FFFFFF;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="800" width="120" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
